@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import tether from '../tether.png'
+import Airdrop from './Airdrop.js'
 
 class Main extends Component {
     //Our React Code
     render() {
         
         return (
-           <div id="content" className="mt-3">
+           <div id="content" className="mt-3" style={{color:'white'}}>
                <table className="table text-muted text-centered">
                     <thead>
                    <tr style={{color:'white'}}>
@@ -21,7 +22,8 @@ class Main extends Component {
                        </tr>
                    </tbody>
                </table>
-               <div className="card-mb-2" style={{opacity: '.9'}}>
+               <div className="card-mb-2" style={{opacity: '.9', backgroundColor:'white', padding:'20px'}}>
+        
                    <form onSubmit={(event) => {  
                     event.preventDefault()
                    let amount
@@ -32,8 +34,8 @@ class Main extends Component {
                    
                    }} className="mb-3">
                         <div style={{borderSpacing:'0 1em'}}>
-                            <label className="float-left" style={{marginLeft:'15px', color:'white'}}><b>Stake Tokens</b></label>
-                            <span className="float-right" style={{marginRigh: "8px", color:'white'}}>
+                            <label className="float-left" style={{marginLeft:'15px', color:'black'}}><b>Stake Tokens</b></label>
+                            <span className="float-right" style={{marginRigh: "8px", color:'black'}}>
                                 <b>Total balance:</b> {window.web3.utils.fromWei(this.props.tetherBalance, 'Ether')}
                             </span>
                             <div className="input-group mb-4">
@@ -56,7 +58,7 @@ class Main extends Component {
                  
                     className="btn btn-primary btn-large btn-block">WITHDRAW</button>
                    <div className="card-body text-center" style={{color:"blue"}}>
-                        AIRDROP
+                        AIRDROP <Airdrop stakingBalance = {this.props.stakingBalance} />
                    </div>
                </div>
 
